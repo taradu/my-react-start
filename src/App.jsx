@@ -1,6 +1,7 @@
-import person from './img/med1.jpg'
+// import person from './img/med1.jpg';
 import './style/style.scss';
 import bgheader from './img/bg_header.png';
+import Card from './components/Card';
 
 const personal = [
   {
@@ -44,56 +45,48 @@ const personal = [
     email: 'moshka@gmail.com',
     tel: '+38073256787',
     img: 'https://avatars.mds.yandex.net/get-bunker/135516/ef98ec26e8e3dece9728920f822748985d676f65/orig',
-  }
-
-]
-
+  },
+];
+const name = 'Taras';
+const position = 'Instructor';
+const img = 'https://profmedical.com.ua/wp-content/uploads/2019/04/terapevt-v-kieve.jpg';
+const email = 'gdgfj@gmail.com';
 
 function App() {
-    return (
+  return (
     <div className="App">
-         <div className="container">
-      <div className="header">
-        <div className="header__logo">
-          <img className="medicalLogo" src="" alt=""/>
-          <p className="titleLogo">Medical Lutsk Community</p>
-        </div> 
-        <div className="header__logo-bg">
-          <img src={bgheader} alt=""/>
-        </div>
+      <div className="container">
+        <div className="header">
+          <div className="header__logo">
+            <img className="medicalLogo" src="" alt="" />
+            <p className="titleLogo">Medical Lutsk Community</p>
+          </div>
+          <div className="header__logo-bg">
+            <img src={bgheader} alt="" />
+          </div>
           <ul>
             <li>Головна</li>
             <li>Наші спеціалісти</li>
             <li>Про нас</li>
             <li>Контакти</li>
           </ul>
-      </div>
-      <hr/>
-      <div className="main">
-        {personal.map((obj) => {
-
-          return (
-          <div className="card">
-          <div className="card-info">
-           <img className="card-img" src={obj.img} alt={obj.position}/>
-            <strong>{obj.name}<br/> {obj.position}</strong>
-            <a href="">Зв'язатись</a>
-            <span>{obj.email}</span>
-            <span>{obj.tel}</span>
-          </div>
         </div>
-          )
-          
-        }) }
-        
-
-        
-        
-
-    </div>
-    </div>
+        <hr />
+        <div className="main">
+          <Card
+            name={personal[0].name}
+            position={personal[0].position}
+            URL={personal[0].img}
+            tel={personal[0].tel}
+            email={personal[0].email}
+          />
+        </div>
+      </div>
     </div>
   );
 }
+// const props = {
+// 	personal: personal
+// }
 
 export default App;
